@@ -1,0 +1,27 @@
+﻿<Window x:Class="WindowBoundTest.MainWindow"
+		xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+		xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+		Title="Window Bound Test"
+		Height="200" Width="600"
+		ResizeMode="NoResize" SizeToContent="Height">
+	<StackPanel>
+		<StackPanel Margin="10">
+			<CheckBox x:Name="WindowStyleCheckBox"
+					  Margin="0,2"
+					  Content="WindowStyle=None"/>
+			<CheckBox x:Name="AllowsTransparencyCheckBox"
+					  Margin="0,2"
+					  Content="AllowsTransparency=True"/>
+			<CheckBox x:Name="WindowChromeCheckBox"
+					  Margin="0,2"
+					  Content="WindowChrome=Yes"/>
+			<CheckBox x:Name="AdjustsMaximizedBoundCheckBox"
+					  Margin="0,2"
+					  Content="AdjustsMaximizedBound=True"/>
+		</StackPanel>
+
+		<Button Height="40" Margin="0,8"
+				Content="Launch Window"
+				Click="Launch_Click"/>
+	</StackPanel>
+</Window>
