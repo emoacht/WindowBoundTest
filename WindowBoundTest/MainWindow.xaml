@@ -9,9 +9,23 @@
 			<CheckBox x:Name="WindowStyleCheckBox"
 					  Margin="0,2"
 					  Content="WindowStyle=None"/>
+
+			<!-- When AllowsTransparency is set to True, WindowStyle must be set to None.-->
 			<CheckBox x:Name="AllowsTransparencyCheckBox"
 					  Margin="0,2"
-					  Content="AllowsTransparency=True"/>
+					  Content="AllowsTransparency=True"
+					  IsEnabled="{Binding ElementName=WindowStyleCheckBox, Path=IsChecked, Mode=OneWay}">
+				<CheckBox.Style>
+					<Style TargetType="{x:Type CheckBox}">
+						<Style.Triggers>
+							<Trigger Property="IsEnabled" Value="False">
+								<Setter Property="IsChecked" Value="False"/>
+							</Trigger>
+						</Style.Triggers>
+					</Style>
+				</CheckBox.Style>
+			</CheckBox>
+
 			<CheckBox x:Name="WindowChromeCheckBox"
 					  Margin="0,2"
 					  Content="WindowChrome=Yes"/>
